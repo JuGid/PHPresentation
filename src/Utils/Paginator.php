@@ -23,7 +23,7 @@ class Paginator implements Renderable
   private function createFirstSlides() {
     $content_summary = [];
     $nbSections = count($this->presentation->getSections());
-    for($i = 1; $i < $nbSections; $i++) {
+    for($i = 0; $i < $nbSections; $i++) {
       $content_summary[] = $this->presentation->getSection($i)->getName();
     }
 
@@ -31,6 +31,8 @@ class Paginator implements Renderable
 
     $flyleaf = new PHPSection("");
     $flyleaf->createSlide()
+            ->contentCentered()
+            ->textCentered()
             ->title($this->presentation->getName())
             ->text($content_flyleaf)
             ->text('v'.$this->presentation->getVersion());
@@ -43,6 +45,7 @@ class Paginator implements Renderable
     $this->presentation->addSectionFirst($flyleaf);
   }
 
+  //Sure, it can be surely improved
   private function getPaginationArray() {
     $section = $this->presentation->getSection($this->i_section);
     $for_next = array();
@@ -94,14 +97,19 @@ class Paginator implements Renderable
       throw new \Exception('You have to set a template before rendering the presentation.');
     }
 
-    $array_views_components = [];
-    $array_views_components['components'] = $this->presentation->getSection($this->i_section)->render($this->i_slide);
-    $array_views_components['pages'] = $this->presentation->pages();
-    $array_views_components['page'] = $this->getCurrentNumberPage();
-    $array_views_components['pagination'] = $this->getPaginationArray();
-    $array_views_components['information'] = $this->presentation->getInformation();
-    $array_views_components['section'] = $this->presentation->getSection($this->i_section)->getName();
-    $this->presentation->getTemplate()->setData($array_views_components);
+    $current_section = $this->presentation->getSection($this->i_section);
+    $current_slide = $current_section->getSlide($this->i_slide);
+
+    $this->presentation->getTemplate()->setData(array(
+      'components'=>$current_section->render($this->i_slide),
+      'contentCentered'=>$current_slide->isContentCentered(),
+      'textCentered'=>$current_slide->isTextCentered(),
+      'pages'=>$this->presentation->pages(),
+      'page'=>$this->getCurrentNumberPage(),
+      'pagination'=>$this->getPaginationArray(),
+      'information'=>$this->presentation->getInformation(),
+      'section'=>$current_section->getName(),
+    ));
 
     echo $this->presentation->getTemplate()->render();
   }

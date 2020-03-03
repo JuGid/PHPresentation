@@ -21,11 +21,19 @@
           <div class="card-header rounded-0 bg-blue text-white">
             <strong>{{ section }}</strong>
           </div>
-          <div class="card-body p-5 border-0">
-            {% for component in components %}
-              {{ component | raw}}
-            {% endfor %}
+          <div class="card-body p-5 border-0 h-100 {% if contentCentered == true %}d-flex align-items-center{% endif %}">
 
+            {% if contentCentered == true %}
+            <div class="mx-auto {% if contentCentered == true %}text-center{% endif %}">
+            {% endif %}
+
+               {% for component in components %}
+                 {{ component | raw}}
+               {% endfor %}
+
+            {% if contentCentered == true %}
+            </div>
+            {% endif %}
           </div>
           <div class="card-footer text-muted border-0">
             <div class="d-flex">

@@ -9,9 +9,15 @@ class PHPSlide implements Renderable
 {
   private $builder;
 
+  private $contentCentered;
+
+  private $textCentered;
+
   public function __construct()
   {
     $this->setBuilder(new PHPComponentBuilder());
+    $this->contentCentered = false;
+    $this->textCentered = false;
   }
 
   public function add($type, array $options) {
@@ -21,6 +27,24 @@ class PHPSlide implements Renderable
 
   private function setBuilder(PHPComponentBuilder $builder) {
     $this->builder = $builder;
+  }
+
+  public function contentCentered() {
+    $this->contentCentered = true;
+    return $this;
+  }
+
+  public function textCentered() {
+    $this->textCentered = true;
+    return $this;
+  }
+
+  public function isContentCentered() {
+    return $this->contentCentered;
+  }
+
+  public function isTextCentered() {
+    return $this->textCentered;
   }
 
   public function render()
