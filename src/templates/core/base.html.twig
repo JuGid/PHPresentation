@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}Presentation{% endblock %}</title>
+
+  {% block stylesheets %}
+    <link rel="stylesheet" href="src/templates/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="src/templates/assets/css/PHPresentation.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  {% endblock %}
+</head>
+
+<body class="bg-dark">
+  <div class="container-fluid h-100">
+    <div class="row align-items-center h-100">
+      <div class="col-12 mx-auto my-auto card-height">
+        <div class="card rounded-0 border-0 h-100">
+          <div class="card-header rounded-0 bg-blue text-white">
+            <strong>{{ section }}</strong>
+          </div>
+          <div class="card-body p-5 border-0">
+            {% for component in components %}
+              {{ component | raw}}
+            {% endfor %}
+
+          </div>
+          <div class="card-footer text-muted border-0">
+            <div class="d-flex">
+              <div class="p-2">{{ information.name }}</div>
+              <div class="p-1 pt-2">-</div>
+              <div class="p-2">{{ information.author }}</div>
+              <div class="p-1 pt-2">-</div>
+              <div class="p-2">{{ information.version }}</div>
+              <div class="ml-auto badge bg-blue text-white">{{ page }}</div>
+            </div>
+
+            <a hidden id="previous" href="http://localhost:8000/index.php?se={{ pagination.prevSection }}&sl={{ pagination.prevSlide }}">Previous</a>
+            <a hidden id="next" href="http://localhost:8000/index.php?se={{ pagination.nextSection }}&sl={{ pagination.nextSlide }}">Next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="src/templates/assets/js/shortcut.js" ></script>
+  {% endblock %}
+
+</body>
+</html>

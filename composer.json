@@ -1,0 +1,23 @@
+{
+    "name": "jugid/phpresentation",
+    "description": "Create presentaiton with PHP and integrate it on your webserver",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Julien Gidel",
+            "email": "gidjulien@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPresentation\\": "src/"
+        }
+    }
+
+}

@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  font-family: 'Roboto', serif;
+  font-size:1.1rem;
+}
+
+.bg-blue {
+  background-color:#005ab5;
+}
+
+.card-height {
+  height: 90%;
+}
