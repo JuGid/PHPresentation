@@ -118,11 +118,15 @@ class PHPresentation
     );
   }
 
-  public function createSection($name) {
+  public function createSection($name, string $description="") {
     $section_name = new PHPSection();
     $section_name->createSlide()
             ->contentCentered()
             ->title($name);
+    if(!empty($description)) {
+      $section_name->lastSlide()
+                   ->text($description);
+    }
     $this->addSection($section_name);
 
     $section = new PHPSection($name);

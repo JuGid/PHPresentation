@@ -104,4 +104,11 @@ class PHPSlide implements Renderable
     return $this;
   }
 
+  public function code(string $content) {
+    $this->add('code', array(
+      'content'=>$content
+    ));
+    return $this;
+  }
+
 }

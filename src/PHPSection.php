@@ -6,15 +6,18 @@ class PHPSection
 {
   private $name;
 
+  private $description;
+
   /**
   * Represent the slides contained in the section.
   * Each index represents a slide
   */
   private $slides;
 
-  public function __construct($name="")
+  public function __construct($name="", $description="")
   {
     $this->name = $name;
+    $this->description = $description;
     $this->slides = [];
   }
 
@@ -37,6 +40,10 @@ class PHPSection
 
   public function last() {
     return array_key_last($this->slides);
+  }
+
+  public function lastSlide() {
+    return end($this->slides);
   }
 
   public function first() {
