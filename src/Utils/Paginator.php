@@ -24,7 +24,9 @@ class Paginator implements Renderable
     $content_summary = [];
     $nbSections = count($this->presentation->getSections());
     for($i = 0; $i < $nbSections; $i++) {
-      $content_summary[] = $this->presentation->getSection($i)->getName();
+      if(!empty($this->presentation->getSection($i)->getName())) {
+        $content_summary[] = $this->presentation->getSection($i)->getName();
+      }
     }
 
     $flyleaf = new PHPSection("");
