@@ -27,17 +27,15 @@ class Paginator implements Renderable
       $content_summary[] = $this->presentation->getSection($i)->getName();
     }
 
-    $content_flyleaf = $this->presentation->getName().' par '.$this->presentation->getAuthor();
-
     $flyleaf = new PHPSection("");
     $flyleaf->createSlide()
             ->contentCentered()
             ->textCentered()
             ->title($this->presentation->getName())
-            ->text($content_flyleaf)
+            ->text('by '.$this->presentation->getAuthor())
             ->text('v'.$this->presentation->getVersion());
 
-    $summary = new PHPSection('Sommaire');
+    $summary = new PHPSection('Summary');
     $summary->createSlide()
             ->list($content_summary);
 
