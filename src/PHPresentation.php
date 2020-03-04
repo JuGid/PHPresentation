@@ -119,10 +119,13 @@ class PHPresentation
   }
 
   public function createSection($name) {
-    $section = new PHPSection($name);
-    $section->createSlide()
+    $section_name = new PHPSection();
+    $section_name->createSlide()
             ->contentCentered()
             ->title($name);
+    $this->addSection($section_name);
+
+    $section = new PHPSection($name);
     $this->addSection($section);
     return $section;
   }
