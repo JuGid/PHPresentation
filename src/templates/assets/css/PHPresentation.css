@@ -1,7 +1,11 @@
 html, body {
   height: 100%;
   font-family: 'Roboto', serif;
-  font-size:1.1rem;
+    font-size:1.22rem;
+}
+
+.card-footer {
+  font-size:0.9rem;
 }
 
 .bg-blue {
