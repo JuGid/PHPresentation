@@ -9,9 +9,9 @@ class Paginator implements Renderable
 {
   private $presentation;
 
-  private static $i_section;
+  private $i_section;
 
-  private static $i_slide;
+  private $i_slide;
 
   public function __construct($presentation) {
     $this->presentation = $presentation;
