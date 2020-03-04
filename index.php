@@ -14,20 +14,36 @@ $presentation->createSection("First section", "And this is the description")
              ->title('Text example')
              ->text('This is another text')
              ->text('And this is too !');
+$presentation->createSection("Example section", "This section present every components")
+             ->createSlide()
+             ->title('This is a title')
+             ->text('This is a text');
 $presentation->last()
-             ->createSlide()
-             ->title('List example')
-             ->list(['Element 1', 'Element 2', 'Element 3']);
-$presentation->createSection("Second section", "To present all the features")
-             ->createSlide()
-             ->title('Block example')
-             ->block('Block titre 1', 'Block content 1')
-             ->block('Block titre 2', 'Block content 2')
-             ->block('Block titre 3', 'Block content 3');
+           ->createSlide()
+           ->title('Block example')
+           ->block('Block titre 1', 'Block content 1')
+           ->block('Block titre 2', 'Block content 2')
+           ->block('Block titre 3', 'Block content 3');
 $presentation->last()
              ->createSlide()
              ->title('Code example')
              ->code('<p>This is a code sample</p>');
+$presentation->last()
+             ->createSlide()
+             ->title('Card example')
+             ->card('This is a card with content');
+ $presentation->last()
+              ->createSlide()
+              ->title('Image example')
+              ->image('/src/templates/assets/images/example.png');
+$presentation->last()
+             ->createSlide()
+             ->title('Link example')
+             ->link("https://github.com/JuGid/PHPresentation", 'Our Github');
+$presentation->last()
+            ->createSlide()
+            ->title('List example')
+            ->list(['Element 1', 'Element 2', 'Element 3']);
 
 $paginator = new Paginator($presentation);
 $paginator->render();

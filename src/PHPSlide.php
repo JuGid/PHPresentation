@@ -111,4 +111,11 @@ class PHPSlide implements Renderable
     return $this;
   }
 
+  public function card(string $content) {
+    $this->add('card', array(
+      'content'=>$content
+    ));
+    return $this;
+  }
+
 }
