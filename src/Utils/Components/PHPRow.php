@@ -7,7 +7,7 @@ class PHPRow extends PHPComponent
   private $column;
 
   private $components;
-  
+
   public function __construct($column = 3)
   {
     $this->column = $column;
