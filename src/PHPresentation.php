@@ -36,6 +36,31 @@ class PHPresentation
     $this->template(new Template('core/base.html.twig'));
   }
 
+  public function init() {
+    $content_summary = [];
+    $nbSections = count($this->getSections());
+    for($i = 0; $i < $nbSections; $i++) {
+      if(!empty($this->getSection($i)->getName())) {
+        $content_summary[] = $this->getSection($i)->getName();
+      }
+    }
+
+    $flyleaf = new PHPSection("");
+    $flyleaf->createSlide()
+            ->contentCentered()
+            ->textCentered()
+            ->title($this->getName())
+            ->text('by '.$this->getAuthor())
+            ->text('v'.$this->getVersion());
+
+    $summary = new PHPSection('Summary');
+    $summary->createSlide()
+            ->list($content_summary);
+
+    $this->addSectionFirst($summary);
+    $this->addSectionFirst($flyleaf);
+  }
+
   public function name($name)
   {
     $this->name = $name;

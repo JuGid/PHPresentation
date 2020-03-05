@@ -4,6 +4,7 @@ namespace PHPresentation\Utils;
 
 use PHPresentation\Utils\Renderable;
 use PHPresentation\PHPSection;
+use PHPresentation\Utils\Initializer;
 
 class Paginator implements Renderable
 {
@@ -15,34 +16,9 @@ class Paginator implements Renderable
 
   public function __construct($presentation) {
     $this->presentation = $presentation;
+    $this->presentation->init();
     $this->i_section = 0;
     $this->i_slide = 0;
-    $this->createFirstSlides();
-  }
-
-  private function createFirstSlides() {
-    $content_summary = [];
-    $nbSections = count($this->presentation->getSections());
-    for($i = 0; $i < $nbSections; $i++) {
-      if(!empty($this->presentation->getSection($i)->getName())) {
-        $content_summary[] = $this->presentation->getSection($i)->getName();
-      }
-    }
-
-    $flyleaf = new PHPSection("");
-    $flyleaf->createSlide()
-            ->contentCentered()
-            ->textCentered()
-            ->title($this->presentation->getName())
-            ->text('by '.$this->presentation->getAuthor())
-            ->text('v'.$this->presentation->getVersion());
-
-    $summary = new PHPSection('Summary');
-    $summary->createSlide()
-            ->list($content_summary);
-
-    $this->presentation->addSectionFirst($summary);
-    $this->presentation->addSectionFirst($flyleaf);
   }
 
   //Sure, it can be surely improved
