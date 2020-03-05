@@ -3,8 +3,6 @@
 namespace PHPresentation\Utils;
 
 use PHPresentation\Utils\Renderable;
-use PHPresentation\PHPSection;
-use PHPresentation\Utils\Initializer;
 
 class Paginator implements Renderable
 {
