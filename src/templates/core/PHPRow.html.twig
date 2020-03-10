@@ -1,0 +1,6 @@
+{% set col = 12 / columns %}
+{% for component in components %}
+  <div class="col-{{ col | round(0, 'floor') }}">
+    {{ component | raw}}
+  </div>
+{% endfor %}

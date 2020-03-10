@@ -44,9 +44,9 @@ $presentation->last()
              ->createSlide()
              ->title('List example')
              ->list(['Element 1', 'Element 2', 'Element 3']);
-/*
 $presentation->last()
              ->createSlide()
+             ->title('Grid example')
              ->beginGrid(2)
                ->beginRow()
                  ->text('New grid text')
@@ -56,7 +56,7 @@ $presentation->last()
                  ->block('Hello world', 'Hello world content')
                  ->block('Block title', 'Block content')
                ->endRow()
-             ->endGrid()
-*/
+             ->endGrid();
+
 $paginator = new Paginator($presentation);
 $paginator->render();

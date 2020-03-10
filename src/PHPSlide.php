@@ -4,6 +4,7 @@ namespace PHPresentation;
 
 use PHPresentation\Utils\Renderable;
 use PHPresentation\Utils\Factory\PHPcomponentBuilder;
+use PHPresentation\Utils\Components\PHPGrid;
 
 class PHPSlide implements Renderable
 {
@@ -13,15 +14,22 @@ class PHPSlide implements Renderable
 
   private $textCentered;
 
+  private $current_grid;
+
   public function __construct()
   {
     $this->setBuilder(new PHPComponentBuilder());
     $this->contentCentered = false;
     $this->textCentered = false;
+    $this->current_grid = null;
   }
 
-  public function add($type, array $options) {
-    $this->builder->add($type, $options);
+  public function add($type, array $options = []) {
+    if(null !== $this->current_grid && $this->current_grid->hasCurrentRow()) {
+      $this->current_grid->add($type, $options);
+    } else {
+      $this->builder->add($type, $options);
+    }
     return $this;
   }
 
@@ -115,6 +123,28 @@ class PHPSlide implements Renderable
     $this->add('card', array(
       'content'=>$content
     ));
+    return $this;
+  }
+
+  public function beginGrid($col) {
+    $grid = new PHPGrid($col);
+    $this->current_grid = $grid;
+    return $this;
+  }
+
+  public function beginRow() {
+    $this->current_grid->beginRow();
+    return $this;
+  }
+
+  public function endRow() {
+    $this->current_grid->endRow();
+    return $this;
+  }
+
+  public function endGrid() {
+    $this->add($this->current_grid);
+    $this->current_grid = null;
     return $this;
   }
 

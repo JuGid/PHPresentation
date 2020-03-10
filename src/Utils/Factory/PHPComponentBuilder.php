@@ -39,12 +39,12 @@ class PHPComponentBuilder
   }
 
   public function add($type, $options) {
-    if(null !== $type && !\is_string($type) && !$type instanceof PHPComponentInterface) {
-      throw new Exception('Unexpected type for the component.');
+    if(null === $type && !$type instanceof PHPComponent && !is_string($type)) {
+      throw new \Exception('Unexpected type for the component.');
     }
 
-    if($type instanceof PHPComponentInterface) {
-      $this->components[] = [$type, $options];
+    if($type instanceof PHPComponent) {
+      $this->components[] = $type;
     } else {
       $this->unresolved_components[] = [$type, $options];
     }
