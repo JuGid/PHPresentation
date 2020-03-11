@@ -59,19 +59,11 @@ PHPresentation can be used if you have a presentation to do and you don't have s
     $paginator->render();
 
 ### More
-This is not even the first release. I have much things to do before a v1.0.0. I have a Trello to help me and I can share if you ask (French). 
-PHPresentation will be improved each week. Next things to come :
+This is not even the first release. I have much things to do before a v1.0.0. I have a [Project](https://github.com/JuGid/PHPresentation/projects/1) to help me on Github
 
- 1. Improve the base template
- 2. Add options to components for personalization
- 3. Add more components (like PHPGrid, PHPCode or PHPCard)
- 4. Block number of components on a slide to avoid bad rendering by a weight system
- 5. Unit tests to ensure working
+PHPresentation will be improved each week.
 
-And decisions I have to make:
-
- - Is it usefull here to use Twig cache
- - Change for another CSS Framework (Bootstrap seems too heavy for the job)
+[You can also visit my website](https://jugid.Fr)
 
 *Last thing : Sorry for my english writing skill...*
 
