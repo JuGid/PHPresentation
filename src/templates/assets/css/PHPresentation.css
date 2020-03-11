@@ -19,3 +19,43 @@ html, body {
 .card-height {
   height: 90%;
 }
+
+.text-10 {
+  font-size:1rem;
+}
+
+.text-9 {
+  font-size:0.9rem;
+}
+
+.text-8 {
+  font-size:0.8rem;
+}
+
+.text-7 {
+  font-size:0.7rem;
+}
+
+.text-6 {
+  font-size:0.6rem;
+}
+
+.text-5 {
+  font-size:0.5rem;
+}
+
+.text-4 {
+  font-size:0.4rem;
+}
+
+.text-3 {
+  font-size:0.3rem;
+}
+
+.text-2 {
+  font-size:0.2rem;
+}
+
+.text-1 {
+  font-size:0.1rem;
+}
