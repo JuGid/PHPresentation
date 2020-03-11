@@ -60,68 +60,77 @@ class PHPSlide implements Renderable
     return $this->builder->createViews();
   }
 
-  public function block(string $title, string $content) {
+  public function block(string $title, string $content, array $options = []) {
     $this->add('block', array(
       'title'=>$title,
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function button(string $link, string $text) {
+  public function button(string $link, string $text, array $options = []) {
     $this->add('button', array(
       'link'=>$link,
-      'text'=>$text
+      'text'=>$text,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function image(string $content) {
+  public function image(string $content, array $options = []) {
     $this->add('image', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function link(string $link, string $text) {
+  public function link(string $link, string $text, array $options = []) {
     $this->add('link', array(
       'link'=>$link,
-      'text'=>$text
+      'text'=>$text,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function list(array $content) {
+  public function list(array $content, array $options = []) {
     $this->add('list', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function text(string $content) {
+  public function text(string $content, array $options = []) {
     $this->add('text', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function title(string $content) {
+  public function title(string $content, array $options = []) {
     $this->add('title', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function code(string $content) {
+  public function code(string $content, array $options = []) {
     $this->add('code', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
 
-  public function card(string $content) {
+  public function card(string $content, array $options = []) {
     $this->add('card', array(
-      'content'=>$content
+      'content'=>$content,
+      'options'=>$options
     ));
     return $this;
   }
