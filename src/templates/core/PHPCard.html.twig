@@ -1,4 +1,8 @@
-<div class="card rounded-0 border-0 mb-1">
+{% if options.align is defined %}
+  {% set align = 'text-' ~ options.align %}
+{% endif %}
+
+<div class="card rounded-0 border-0 mb-1 {{ align }}">
   <div class="card-body border-0 bg-grey p-2">
       {{ content }}
   </div>

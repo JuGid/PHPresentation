@@ -1,7 +1,5 @@
 {% if options.new_tab %}
   {% set new_tab = 'target="_blank"' %}
-{% else %}
-  {% set new_tab = '' %}
 {% endif %}
 
 <a class="btn btn-primary" href="{{ link }}" {{ new_tab }}>{{ text }}</a>

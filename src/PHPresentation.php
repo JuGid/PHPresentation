@@ -23,6 +23,11 @@ class PHPresentation
   private $version;
 
   /**
+  * @var string
+  */
+  private $date;
+
+  /**
   * @var Template
   */
   private $template;
@@ -34,6 +39,7 @@ class PHPresentation
 
   public function __construct() {
     $this->template(new Template('core/base.html.twig'));
+    $this->date = (new \DateTime('now'))->format('d/m/Y');
   }
 
   public function init() {
@@ -56,7 +62,9 @@ class PHPresentation
     $summary = new PHPSection('Summary');
     $summary->createSlide()
             ->contentCentered()
-            ->list($content_summary);
+            ->list($content_summary, [
+              'style'=>'number'
+            ]);
 
     $this->addSectionFirst($summary);
     $this->addSectionFirst($flyleaf);
@@ -80,6 +88,12 @@ class PHPresentation
   public function author(string $author)
   {
     $this->author = $author;
+  }
+
+  public function date($day, $month, $year) {
+    if($day > 0 && $day <= 31 && $month > 0 && $month <= 12 && $year > 0) {
+      $this->date = $day.'/'.$month.'/'.$year;
+    }
   }
 
   public function addSection($section)
@@ -136,11 +150,16 @@ class PHPresentation
     return $this->author;
   }
 
+  public function getDate() {
+    return $this->date;
+  }
+
   public function getInformation() {
     return array(
       'author'=>$this->getAuthor(),
       'version'=>$this->getVersion(),
-      'name'=>$this->getName()
+      'name'=>$this->getName(),
+      'date'=>$this->getDate()
     );
   }
 
@@ -150,12 +169,12 @@ class PHPresentation
             ->textCentered()
             ->contentCentered()
             ->title($name);
-    
+
     if(!empty($description)) {
       $section_name->lastSlide()
                    ->text($description);
     }
-    
+
     $this->addSection($section_name);
 
     $section = new PHPSection($name);

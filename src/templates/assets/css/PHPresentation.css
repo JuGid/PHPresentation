@@ -59,3 +59,23 @@ html, body {
 .text-1 {
   font-size:0.1rem;
 }
+
+.decoration-none {
+  list-style-type:none;
+}
+
+.decoration-square {
+  list-style-type:square;
+}
+
+.decoration-roman {
+  list-style-type:upper-roman;
+}
+
+.decoration-alpha {
+  list-style-type:lower-alpha;
+}
+
+.decoration-number {
+  list-style-type:decimal;
+}

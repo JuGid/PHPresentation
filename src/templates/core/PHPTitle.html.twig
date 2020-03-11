@@ -1,1 +1,7 @@
-<h3>{{ content }}</h3>
+{% if options.align is defined %}
+  {% set align = 'text-' ~ options.align %}
+{% endif %}
+
+<div class="{{ align }}">
+  <h3>{{ content }}</h3>
+</div>

@@ -1,1 +1,5 @@
-<a href="{{ link }}" {% if options.new_tab %}target="_blank"{% endif %}>{{ text }}</a>
+{% if options.new_tab %}
+  {% set new_tab = 'target="_blank"' %}
+{% endif %}
+
+<a href="{{ link }}" {{ new_tab }}>{{ text }}</a>

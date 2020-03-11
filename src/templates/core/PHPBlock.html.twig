@@ -1,26 +1,20 @@
-{% if options.text_center %}
-  {% set text_center = 'text-center' %}
-{% else %}
-  {% set text_center = '' %}
+{% if options.text_align is defined %}
+  {% set text_align = 'text-' ~ options.text_align %}
 {% endif %}
 
-{% if options.title_center %}
-  {% set title_center = 'text-center' %}
-{% else %}
-  {% set title_center = '' %}
+{% if options.title_align is defined %}
+  {% set title_align = 'text-' ~ options.title_align %}
 {% endif %}
 
-{% if options.center %}
-  {% set center = 'text-center' %}
-{% else %}
-  {% set center = '' %}
+{% if options.align is defined %}
+  {% set align = 'text-' ~ options.align %}
 {% endif %}
 
-<div class="card rounded-0 border-0 mb-1 {{ center }}">
-  <div class="card-header rounded-0 bg-blue text-white p-1 {{ title_center }}">
+<div class="card rounded-0 border-0 mb-1 {{ align }}">
+  <div class="card-header rounded-0 bg-blue text-white p-1 {{ title_align }}">
     <strong>{{ title }}</strong>
   </div>
-  <div class="card-body border-0 bg-grey pl-2 {{ text_center }}">
+  <div class="card-body border-0 bg-grey pl-2 {{ text_align }}">
     {{ content }}
   </div>
 </div>

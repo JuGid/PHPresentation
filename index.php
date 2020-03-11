@@ -7,14 +7,14 @@ use PHPresentation\Utils\Paginator;
 $presentation = new PHPresentation();
 $presentation->name('My pretty presentation');
 $presentation->author('User Name');
-$presentation->version(0,0,1);
+$presentation->version(1,4,2);
 
 $presentation->createSection("First section", "And this is the description")
              ->createSlide()
              ->title('Text example')
              ->text('This is another text')
              ->text('And this is too !');
-$presentation->createSection("Example section", "This section present every components")
+$presentation->createSection("Example section", "This section presents every components")
              ->createSlide()
              ->title('This is a title')
              ->text('This is a text');
@@ -22,22 +22,28 @@ $presentation->last()
              ->createSlide()
              ->title('Block example')
              ->block('Block titre 1', 'Block content 1', [
-               'text_center'=>true
+               'text_align'=>'center'
              ])
              ->block('Block titre 2', 'Block content 2', [
-               'title_center'=>true
+               'title_align'=>'right'
              ])
              ->block('Block titre 3', 'Block content 3', [
-               'center'=>true
+               'align'=>'center'
              ]);
 $presentation->last()
              ->createSlide()
-             ->title('Code example')
-             ->code('<p>This is a code sample</p>');
+             ->title('Code example', [
+               'align'=>'center'
+             ])
+             ->code('<p>This is a code sample</p>', [
+               'language'=>'html'
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('Card example')
-             ->card('This is a card with content');
+             ->card('This is a card with content', [
+               'align'=> 'center'
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('Image example')
@@ -53,7 +59,9 @@ $presentation->last()
 $presentation->last()
              ->createSlide()
              ->title('List example')
-             ->list(['Element 1', 'Element 2', 'Element 3']);
+             ->list(['Element 1', 'Element 2', 'Element 3'],[
+               'style'=>'alpha'
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('Grid example')
