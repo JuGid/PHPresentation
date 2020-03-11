@@ -24,13 +24,20 @@
           <div class="card-body p-5 border-0 h-100 {% if contentCentered == true %}d-flex align-items-center{% endif %}">
 
             {% if contentCentered == true %}
-            <div class="mx-auto {% if contentCentered == true %}text-center{% endif %}">
+            <div class="mx-auto">
             {% endif %}
 
-               {% for component in components %}
-                 {{ component | raw}}
-               {% endfor %}
+              {% if textCentered == true %}
+                <div class="text-center">
+              {% endif %}
 
+                {% for component in components %}
+                 {{ component | raw}}
+                {% endfor %}
+
+              {% if textCentered == true %}
+                </div>
+              {% endif %}
             {% if contentCentered == true %}
             </div>
             {% endif %}
