@@ -57,6 +57,10 @@ $presentation->last()
                  ->block('Block title', 'Block content')
                ->endRow()
              ->endGrid();
+$presentation->last()
+             ->createSlide()
+             ->title('Button example')
+             ->button('http://google.Fr', 'Google');
 
 $paginator = new Paginator($presentation);
 $paginator->render();
