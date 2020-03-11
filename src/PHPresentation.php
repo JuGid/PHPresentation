@@ -55,6 +55,7 @@ class PHPresentation
 
     $summary = new PHPSection('Summary');
     $summary->createSlide()
+            ->contentCentered()
             ->list($content_summary);
 
     $this->addSectionFirst($summary);
@@ -146,12 +147,15 @@ class PHPresentation
   public function createSection($name, string $description="") {
     $section_name = new PHPSection();
     $section_name->createSlide()
+            ->textCentered()
             ->contentCentered()
             ->title($name);
+    
     if(!empty($description)) {
       $section_name->lastSlide()
                    ->text($description);
     }
+    
     $this->addSection($section_name);
 
     $section = new PHPSection($name);
