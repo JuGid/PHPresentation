@@ -21,9 +21,15 @@ $presentation->createSection("Example section", "This section present every comp
 $presentation->last()
              ->createSlide()
              ->title('Block example')
-             ->block('Block titre 1', 'Block content 1')
-             ->block('Block titre 2', 'Block content 2')
-             ->block('Block titre 3', 'Block content 3');
+             ->block('Block titre 1', 'Block content 1', [
+               'text_center'=>true
+             ])
+             ->block('Block titre 2', 'Block content 2', [
+               'title_center'=>true
+             ])
+             ->block('Block titre 3', 'Block content 3', [
+               'center'=>true
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('Code example')
@@ -35,11 +41,15 @@ $presentation->last()
 $presentation->last()
              ->createSlide()
              ->title('Image example')
-             ->image('/src/templates/assets/images/example.png');
+             ->image('/src/templates/assets/images/example.png', [
+               'link'=>"http://google.fr"
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('Link example')
-             ->link("https://github.com/JuGid/PHPresentation", 'Our Github');
+             ->link("https://github.com/JuGid/PHPresentation", 'Our Github', [
+               'new_tab'=>true
+             ]);
 $presentation->last()
              ->createSlide()
              ->title('List example')
@@ -60,7 +70,9 @@ $presentation->last()
 $presentation->last()
              ->createSlide()
              ->title('Button example')
-             ->button('http://google.Fr', 'Google');
+             ->button('http://google.Fr', 'Google',[
+               'new_tab'=>true
+             ]);
 
 $paginator = new Paginator($presentation);
 $paginator->render();

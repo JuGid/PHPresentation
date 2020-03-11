@@ -1,8 +1,26 @@
-<div class="card rounded-0 border-0 mb-1">
-  <div class="card-header rounded-0 bg-blue text-white p-1">
+{% if options.text_center %}
+  {% set text_center = 'text-center' %}
+{% else %}
+  {% set text_center = '' %}
+{% endif %}
+
+{% if options.title_center %}
+  {% set title_center = 'text-center' %}
+{% else %}
+  {% set title_center = '' %}
+{% endif %}
+
+{% if options.center %}
+  {% set center = 'text-center' %}
+{% else %}
+  {% set center = '' %}
+{% endif %}
+
+<div class="card rounded-0 border-0 mb-1 {{ center }}">
+  <div class="card-header rounded-0 bg-blue text-white p-1 {{ title_center }}">
     <strong>{{ title }}</strong>
   </div>
-  <div class="card-body border-0 bg-grey pl-2">
+  <div class="card-body border-0 bg-grey pl-2 {{ text_center }}">
     {{ content }}
   </div>
 </div>
