@@ -45,10 +45,6 @@ class PHPresentation
     $this->date = (new \DateTime('now'))->format('d/m/Y');
   }
 
-  /**
-  *
-  *
-  */
   public function init() {
     $content_summary = [];
     $nbSections = count($this->getSections());

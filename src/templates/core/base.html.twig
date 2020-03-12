@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% block title %}Presentation{% endblock %}</title>
+  <title>{% block title %}{{ information.name }} - {{ information.author }}{% endblock %}</title>
 
   {% block stylesheets %}
     <link rel="stylesheet" href="/src/templates/assets/css/bootstrap.css">
@@ -51,7 +51,7 @@
               <div class="p-2">{{ information.author }}</div>
               <div class="p-1 pt-2">-</div>
               <div class="p-2">{{ information.date }}</div>
-              <div class="ml-auto badge bg-blue text-white text-10 my-auto p-2 rounded-0">{{ page }}</div>
+              <div class="ml-auto badge bg-blue text-white text-10 my-auto p-2 rounded-circle">{{ page }}</div>
             </div>
           </div>
           {% endif %}
