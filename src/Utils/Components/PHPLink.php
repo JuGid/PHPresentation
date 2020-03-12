@@ -13,4 +13,11 @@ class PHPLink extends PHPComponent
   {
     parent::__construct('core/PHPLink.html.twig', $content);
   }
+
+  public function options() {
+    return [
+      'link'=>null,
+      'new_tab'=>[true, false]
+    ];
+  }
 }

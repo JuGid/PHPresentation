@@ -1,10 +1,6 @@
-{% if options.language is defined %}
-  {% set language = 'language-' ~ options.language %}
-{% endif %}
-
 <div class="card rounded-0 border-0 mb-1">
   <div class="card-body border-0 bg-grey p-2">
-    <code class="{{ language }}">
+    <code>
       {{ content }}
     </code>
   </div>

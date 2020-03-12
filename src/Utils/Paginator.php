@@ -68,7 +68,7 @@ class Paginator implements Renderable
     }
 
     if(null === $this->presentation) {
-      throw new \Exception('PResentation is NULL, please provider an instanciated one.');
+      throw new \Exception('Presentation is NULL, please provider an instanciated one.');
     }
 
     if(null === $this->presentation->getTemplate()) {

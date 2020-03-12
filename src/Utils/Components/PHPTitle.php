@@ -11,4 +11,11 @@ class PHPTitle extends PHPComponent
   {
     parent::__construct('core/PHPTitle.html.twig', $content);
   }
+
+  public function options() {
+    return [
+      'content'=>null,
+      'text_align'=>['center', 'left', 'right']
+    ];
+  }
 }

@@ -12,4 +12,11 @@ class PHPText extends PHPComponent
     parent::__construct('core/PHPText.html.twig', $content);
   }
 
+  public function options() {
+    return [
+      'content'=>null,
+      'text_align'=>['center', 'right', 'left']
+    ];
+  }
+
 }

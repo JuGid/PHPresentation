@@ -64,6 +64,9 @@ class PHPGrid extends PHPComponent
     return $this->template->render();
   }
 
+  public function options() {
+    return [];
+  }
 
 
 }

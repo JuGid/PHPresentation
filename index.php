@@ -33,16 +33,18 @@ $presentation->last()
 $presentation->last()
              ->createSlide()
              ->title('Code example', [
-               'align'=>'center'
+               'text_align'=>'center'
              ])
-             ->code('<p>This is a code sample</p>', [
-               'language'=>'html'
-             ]);
+             ->code('<p>This is a code sample</p>');
 $presentation->last()
              ->createSlide()
              ->title('Card example')
-             ->card('This is a card with content', [
-               'align'=> 'center'
+             ->card('This is a card with content with shadow', [
+               'text_align'=> 'center',
+               'shadow'=>true
+             ])
+             ->card('This is a card with content without shadow', [
+               'text_align'=> 'center'
              ]);
 $presentation->last()
              ->createSlide()

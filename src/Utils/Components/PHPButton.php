@@ -13,4 +13,11 @@ class PHPButton extends PHPComponent
   {
     parent::__construct('core/PHPButton.html.twig', $content);
   }
+
+  public function options() {
+    return [
+      'new_tab'=> [true, false]
+    ];
+  }
+
 }

@@ -11,4 +11,12 @@ class PHPCard extends PHPComponent
   {
     parent::__construct('core/PHPCard.html.twig', $content);
   }
+
+  public function options() {
+    return [
+      'text_align'=>['center', 'left', 'right'],
+      'shadow'=>[true, false]
+    ];
+  }
+
 }

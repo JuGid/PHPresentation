@@ -13,4 +13,11 @@ class PHPList extends PHPComponent
     parent::__construct('core/PHPList.html.twig', $content);
   }
 
+  public function options() {
+    return [
+      'content'=>null,
+      'style'=>['alpha', 'roman', 'decimal', 'square', 'circle', 'number']
+    ];
+  }
+
 }

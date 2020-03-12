@@ -41,4 +41,8 @@ class PHPRow extends PHPComponent
     $this->template->setData($data);
     return $this->template->render();
   }
+
+  public function options() {
+    return [];
+  }
 }

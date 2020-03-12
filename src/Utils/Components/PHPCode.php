@@ -11,4 +11,9 @@ class PHPCode extends PHPComponent
   {
     parent::__construct('core/PHPCode.html.twig', $content);
   }
+
+  public function options() {
+    return [];
+  }
+
 }

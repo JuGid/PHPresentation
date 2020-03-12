@@ -7,8 +7,17 @@ namespace PHPresentation\Utils\Components;
 */
 class PHPBlock extends PHPComponent
 {
-  public function __construct($content = array('title'=>'title', 'content'=>'content'))
+  public function __construct($options = array('title'=>'title', 'content'=>'content'))
   {
-    parent::__construct('core/PHPBlock.html.twig', $content);
+    parent::__construct('core/PHPBlock.html.twig', $options);
   }
+
+  public function options() {
+    return [
+      'text_align'=>['center', 'left', 'right'],
+      'title_align'=>['center', 'left', 'right'],
+      'align'=>['center', 'left', 'right']
+    ];
+  }
+
 }
