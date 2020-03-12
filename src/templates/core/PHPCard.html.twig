@@ -1,4 +1,14 @@
-<div class="card rounded-0 border-0 mb-1">
+{% if options.text_align is defined %}
+  {% set align = 'text-' ~ options.align %}
+{% endif %}
+
+{% if options.shadow is defined %}
+  {% if options.shadow %}
+    {% set shadow = 'card-shadow' %}
+  {% endif %}
+{% endif %}
+
+<div class="card rounded-0 border-0 mb-1 {{ align }} {{ shadow }}">
   <div class="card-body border-0 bg-grey p-2">
       {{ content }}
   </div>

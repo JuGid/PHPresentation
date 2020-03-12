@@ -1,1 +1,16 @@
-<a class="btn btn-primary" href="{{ link }}" >{{ text }}</a>
+{% if options.new_tab %}
+  {% set new_tab = 'target="_blank"' %}
+{% endif %}
+
+{% if options.bacolor is defined %}
+  {% set bacolor = 'badge-' ~ options.bacolor %}
+{% else %}
+  {% set bacolor = 'badge-light' %}
+{% endif %}
+
+{% if options.badge is defined %}
+  {% set badge = '<span class="badge ' ~  bacolor  ~'">' ~  options.badge ~ '</span>' %}
+{% endif %}
+
+
+<a class="btn btn-primary" href="{{ link }}" {{ new_tab }}>{{ text }} {{ badge|raw}}</a>

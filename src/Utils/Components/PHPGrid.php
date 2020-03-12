@@ -6,6 +6,9 @@ use PHPresentation\Utils\Factory\PHPcomponentBuilder;
 use PHPresentation\Utils\Components\PHPRow;
 use PHPresentation\Utils\Template;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPGrid extends PHPComponent
 {
 
@@ -27,7 +30,7 @@ class PHPGrid extends PHPComponent
   public function hasCurrentRow() {
     return null !== $this->current_row;
   }
-  
+
   public function beginRow() {
     $new_row = new PHPRow($this->number_of_col);
 
@@ -61,6 +64,9 @@ class PHPGrid extends PHPComponent
     return $this->template->render();
   }
 
+  public function options() {
+    return [];
+  }
 
 
 }

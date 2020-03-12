@@ -6,6 +6,13 @@ use PHPresentation\Utils\Renderable;
 use PHPresentation\Utils\Template;
 use PHPresentation\Utils\Size;
 
+/**
+* Main component class. Contains every functions a component needs.
+* Every components MUST extends this abstract method.
+* Implementing Renderable and PHPComponentInterface help for extension purpose
+* Rendering is always done by the TwigManager inside template.
+* @author Julien GIDEL
+*/
 abstract class PHPComponent implements Renderable, PHPComponentInterface
 {
 
@@ -14,12 +21,12 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
   */
   protected $template;
 
-  protected $content;
+  private $options;
 
-  public function __construct($template_file, $content)
+  public function __construct($template_file, $options)
   {
     $this->template = new Template($template_file);
-    $this->getTemplate()->setData($content);
+    $this->options = $options;
   }
 
   public function setTemplate($template)
@@ -32,9 +39,33 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
     return $this->template;
   }
 
-  public function render()
-  {
-    return $this->getTemplate()->render();
+  protected function getOptions() {
+    return $this->options;
   }
 
+  public function render()
+  {
+    if($this->verify()) {
+      $this->getTemplate()->setData($this->options);
+      return $this->getTemplate()->render();
+    }
+  }
+
+  public function verify() {
+    $valid_options = $this->options();
+
+    foreach($this->options['options'] as $option=>$value) {
+      if(!array_key_exists($option, $valid_options)) {
+        throw new \Exception('The option '.$option. ' is not a valid option name for '.get_class($this));
+      }
+
+      if(null !== $valid_options[$option] && !in_array($value, $valid_options[$option])) {
+        throw new \Exception('The value '.$value.' is not a valid value for option '. $option . ' for '.get_class($this));
+      }
+
+    }
+    return true;
+  }
+
+  abstract public function options();
 }

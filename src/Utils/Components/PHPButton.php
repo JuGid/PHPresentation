@@ -2,6 +2,9 @@
 
 namespace PHPresentation\Utils\Components;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPButton extends PHPComponent
 {
   private $title;
@@ -10,4 +13,13 @@ class PHPButton extends PHPComponent
   {
     parent::__construct('core/PHPButton.html.twig', $content);
   }
+
+  public function options() {
+    return [
+      'new_tab'=> [true, false],
+      'badge'=>null,
+      'bacolor'=>['light', 'primary', 'danger', 'warning', 'success']
+    ];
+  }
+
 }

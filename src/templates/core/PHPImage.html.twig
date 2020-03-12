@@ -1,1 +1,9 @@
-<img src="{{ content}}"/>
+{% if options.link is defined %}
+  <a href="{{ options.link }}" target="_blank">
+{% endif %}
+
+<img src="{{ content}}" />
+
+{% if options.link is defined %}
+  </a>
+{% endif %}

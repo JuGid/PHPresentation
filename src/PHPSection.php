@@ -2,6 +2,9 @@
 
 namespace PHPresentation;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPSection
 {
   private $name;

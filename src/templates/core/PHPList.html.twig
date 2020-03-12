@@ -1,4 +1,8 @@
-<ul>
+{% if options.style %}
+  {% set style = 'decoration-' ~ options.style%}
+{% endif %}
+
+<ul class="{{ style }}">
   {% for c in content %}
     <li>{{ c }}</li>
   {% endfor %}
