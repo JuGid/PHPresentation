@@ -7,6 +7,12 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use PHPresentation\Utils\TwigManager;
 
+/**
+* Represents a template with data and file to render.
+* It is used for facilitating the rendering by setting a Template object that manage data
+* and rendering from TwigManager
+* @author Julien GIDEL
+*/
 class Template implements Renderable
 {
   protected $file;

@@ -5,6 +5,9 @@ namespace PHPresentation;
 use PHPresentation\Utils\Template;
 use PHPresentation\PHPSection;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPresentation
 {
   /**
@@ -42,6 +45,10 @@ class PHPresentation
     $this->date = (new \DateTime('now'))->format('d/m/Y');
   }
 
+  /**
+  *
+  *
+  */
   public function init() {
     $content_summary = [];
     $nbSections = count($this->getSections());
@@ -53,15 +60,18 @@ class PHPresentation
 
     $flyleaf = new PHPSection("");
     $flyleaf->createSlide()
+            ->dontShowFooter()
             ->contentCentered()
             ->textCentered()
             ->title($this->getName())
             ->text('by '.$this->getAuthor())
             ->text('v'.$this->getVersion());
 
-    $summary = new PHPSection('Summary');
+    $summary = new PHPSection("");
     $summary->createSlide()
+            ->dontShowFooter()
             ->contentCentered()
+            ->title("Summary")
             ->list($content_summary, [
               'style'=>'number'
             ]);

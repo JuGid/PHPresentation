@@ -42,6 +42,8 @@
             </div>
             {% endif %}
           </div>
+
+          {% if showFooter %}
           <div class="card-footer base-footer text-muted border-0">
             <div class="d-flex">
               <div class="p-2">{{ information.name }}</div>
@@ -51,10 +53,10 @@
               <div class="p-2">{{ information.date }}</div>
               <div class="ml-auto badge bg-blue text-white text-10 my-auto p-2 rounded-0">{{ page }}</div>
             </div>
-
-            <a hidden id="previous" href="http://localhost:8000/index.php?se={{ pagination.prevSection }}&sl={{ pagination.prevSlide }}">Previous</a>
-            <a hidden id="next" href="http://localhost:8000/index.php?se={{ pagination.nextSection }}&sl={{ pagination.nextSlide }}">Next</a>
           </div>
+          {% endif %}
+          <a hidden id="previous" href="http://localhost:8000/index.php?se={{ pagination.prevSection }}&sl={{ pagination.prevSlide }}">Previous</a>
+          <a hidden id="next" href="http://localhost:8000/index.php?se={{ pagination.nextSection }}&sl={{ pagination.nextSlide }}">Next</a>
         </div>
       </div>
     </div>

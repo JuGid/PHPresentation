@@ -2,6 +2,9 @@
 
 namespace PHPresentation\Utils\Components;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPLink extends PHPComponent
 {
   private $title;

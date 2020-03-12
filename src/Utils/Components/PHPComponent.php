@@ -6,6 +6,13 @@ use PHPresentation\Utils\Renderable;
 use PHPresentation\Utils\Template;
 use PHPresentation\Utils\Size;
 
+/**
+* Main component class. Contains every functions a component needs.
+* Every components MUST extends this abstract method.
+* Implementing Renderable and PHPComponentInterface help for extension purpose
+* Rendering is always done by the TwigManager inside template.
+* @author Julien GIDEL
+*/
 abstract class PHPComponent implements Renderable, PHPComponentInterface
 {
 

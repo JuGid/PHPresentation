@@ -6,6 +6,10 @@ use PHPresentation\Utils\Components\PHPComponent;
 use ReflectionClass;
 use PHPresentation\Utils\Factory\PHPComponentFactoryInterface;
 
+/**
+* Just build component throught PHPComponentContainer
+* @author Julien GIDEL
+*/
 class PHPComponentFactory implements PHPComponentFactoryInterface
 {
 

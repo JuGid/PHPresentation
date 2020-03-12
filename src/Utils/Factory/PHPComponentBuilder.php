@@ -6,6 +6,10 @@ use PHPresentation\Utils\Factory\PHPComponentFactory;
 use PHPresentation\Utils\Factory\PHPComponentFactoryInterface;
 use PHPresentation\Utils\Components\PHPComponentInterface;
 
+/**
+* Build a collection of components and can create views
+* @author Julien GIDEL
+*/
 class PHPComponentBuilder
 {
   private $factory;

@@ -5,6 +5,10 @@ namespace PHPresentation\Utils;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 
+/**
+* Used to manage Twig rendering and loading
+* @author Julien GIDEL
+*/
 class TwigManager
 {
   private static $loader;

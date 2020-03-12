@@ -6,15 +6,36 @@ use PHPresentation\Utils\Renderable;
 use PHPresentation\Utils\Factory\PHPcomponentBuilder;
 use PHPresentation\Utils\Components\PHPGrid;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPSlide implements Renderable
 {
+
+  /**
+  * Build the entire slide when needed
+  */
   private $builder;
 
+  /**
+  * Can center the content on the slide
+  */
   private $contentCentered;
 
+  /**
+  * Can center the text on the slide
+  */
   private $textCentered;
 
+  /**
+  * Used to point on the current grid if Begin grid is called
+  */
   private $current_grid;
+
+  /**
+  * Set slide to show the footer (Display page number, presentaiton title, user name and date)
+  */
+  private $show_footer;
 
   public function __construct()
   {
@@ -22,6 +43,7 @@ class PHPSlide implements Renderable
     $this->contentCentered = false;
     $this->textCentered = false;
     $this->current_grid = null;
+    $this->show_footer = true;
   }
 
   public function add($type, array $options = []) {
@@ -47,12 +69,21 @@ class PHPSlide implements Renderable
     return $this;
   }
 
+  public function dontShowFooter() {
+    $this->show_footer = false;
+    return $this;
+  }
+
   public function isContentCentered() {
     return $this->contentCentered;
   }
 
   public function isTextCentered() {
     return $this->textCentered;
+  }
+
+  public function showFooter() {
+    return $this->show_footer;
   }
 
   public function render()

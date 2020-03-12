@@ -5,6 +5,9 @@ namespace PHPresentation\Utils\Components;
 use PHPresentation\Utils\Template;
 use PHPresentation\Utils\Factory\PHPcomponentBuilder;
 
+/**
+* @author Julien GIDEL
+*/
 class PHPRow extends PHPComponent
 {
   private $column;

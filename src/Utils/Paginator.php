@@ -4,6 +4,12 @@ namespace PHPresentation\Utils;
 
 use PHPresentation\Utils\Renderable;
 
+/**
+* Get the section and slide to render and render it.
+* The paginator only paginate. The render function is used to gather
+* information and set it to the presentation template.
+* @author Julien GIDEL
+*/
 class Paginator implements Renderable
 {
   private $presentation;
@@ -83,6 +89,7 @@ class Paginator implements Renderable
       'pagination'=>$this->getPaginationArray(),
       'information'=>$this->presentation->getInformation(),
       'section'=>$current_section->getName(),
+      'showFooter'=>$current_slide->showFooter()
     ));
 
     echo $this->presentation->getTemplate()->render();
