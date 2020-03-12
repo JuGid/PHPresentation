@@ -81,7 +81,9 @@ $presentation->last()
              ->createSlide()
              ->title('Button example')
              ->button('http://google.Fr', 'Google',[
-               'new_tab'=>true
+               'new_tab'=>true,
+               'badge'=>'badge option',
+               'bacolor'=>'warning'
              ]);
 
 $paginator = new Paginator($presentation);

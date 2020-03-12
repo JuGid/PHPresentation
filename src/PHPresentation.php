@@ -86,7 +86,7 @@ class PHPresentation
     $this->template = $template;
   }
 
-  public function version($major, $minor, $build)
+  public function version($major = 0, $minor = 0, $build = 0)
   {
     $this->version = $major.'.'.$minor.'.'.$build;
   }

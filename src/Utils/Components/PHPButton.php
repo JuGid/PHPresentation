@@ -16,7 +16,9 @@ class PHPButton extends PHPComponent
 
   public function options() {
     return [
-      'new_tab'=> [true, false]
+      'new_tab'=> [true, false],
+      'badge'=>null,
+      'bacolor'=>['light', 'primary', 'danger', 'warning', 'success']
     ];
   }
 
