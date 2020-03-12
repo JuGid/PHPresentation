@@ -69,7 +69,7 @@ class PHPresentation
             ->contentCentered()
             ->title("Summary")
             ->list($content_summary, [
-              'style'=>'number'
+              'style'=>'decimal'
             ]);
 
     $this->addSectionFirst($summary);
@@ -188,7 +188,7 @@ class PHPresentation
     return $section;
   }
 
-  public function last() {
+  public function lastSection() {
     return end($this->sections);
   }
 

@@ -76,8 +76,12 @@ html, body {
   list-style-type:lower-alpha;
 }
 
-.decoration-number {
+.decoration-decimal {
   list-style-type:decimal;
+}
+
+.decoration-circle {
+  list-style-type:circle;
 }
 
 .card-shadow {

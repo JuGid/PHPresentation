@@ -57,7 +57,13 @@ class Paginator implements Renderable
   }
 
   private function getCurrentNumberPage() {
-    return $this->i_slide + $this->i_section + 1;
+   $pages = 0;
+   for($i = 0; $i < $this->i_section; $i++) {
+     $pages+=$this->presentation->getSection($i)->slides();
+   }
+
+   $pages+= $this->i_slide + 1;
+   return $pages;
   }
 
   public function render()
