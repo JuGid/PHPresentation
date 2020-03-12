@@ -69,12 +69,14 @@ $presentation->last()
              ->title('Grid example')
              ->beginGrid(2)
                ->beginRow()
-                 ->text('New grid text')
+                 ->text('New grid text',[
+                   'text_align'=>'center'
+                 ])
                  ->block('Title', 'Block content')
                ->endRow()
                ->beginRow()
                  ->block('Hello world', 'Hello world content')
-                 ->block('Block title', 'Block content')
+                 ->card('This is a card in a PHPGrid')
                ->endRow()
              ->endGrid();
 $presentation->last()
