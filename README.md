@@ -59,6 +59,9 @@ PHPresentation can be used if you have a presentation to do and you don't have s
     $paginator = new Paginator($presentation);
     $paginator->render();
 
+### Documentation
+
+You can find the minimalist documentation here : [PHPresentation docs website](https://jugid.github.io/PHPresentation/)
 ### More
 This is not even the first release. I have much things to do before a v1.0.0. I have a [Project](https://github.com/JuGid/PHPresentation/projects/1) to help me on Github
 
