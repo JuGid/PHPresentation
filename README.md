@@ -1,3 +1,4 @@
+![Logo](https://github.com/JuGid/PHPresentation/blob/master/docs/logo_phpresentation.png)
 
 > This is a training project. Feel free to help me improving this by sending Pull requests
 
