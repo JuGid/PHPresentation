@@ -42,6 +42,7 @@ You can use the following code to create a new section and a new slide in it
 
     $presentation->createSection("Example", "Description of this example")
                  ->createSlide();
+
 You can add some slide to the last section :
 
     $presentation->lastSection()
@@ -79,6 +80,7 @@ You can create block with a title and a content.
 
 ## PHPButton
 You can create button with a text and a link.
+
 **Use it**
 
     ->button('http://google.Fr', 'Google', [option])
@@ -90,7 +92,8 @@ You can create button with a text and a link.
     'bacolor'=>['light', 'primary', 'danger', 'warning', 'success']
 
 ## PHPCard
-Display a card with a grey background to highlight text
+Display a card with a grey background to highlight text.
+
 **Use it**
 
     ->card('This is a card with content with shadow', [options])
@@ -101,7 +104,8 @@ Display a card with a grey background to highlight text
     'shadow'=>[true, false]
 
 ## PHPCode
-Display code in a card
+Display code in a card.
+
 **Use it**
 
     ->code('<p>This is a code sample</p>');
@@ -137,6 +141,7 @@ PHPGrid has a special syntax since you add components to it. You have to declare
 
 ## PHPImage
 Display a picture and can add link to it.
+
 **Use it**
 
     ->image('/src/templates/assets/images/example.png', [options]);
@@ -148,6 +153,7 @@ Display a picture and can add link to it.
 
 ## PHPLink
 Display a link.
+
 **Use it**
 
     ->link("https://github.com/JuGid/PHPresentation", 'Our Github', [options]);
@@ -158,7 +164,8 @@ Display a link.
     'new_tab'=>[true, false]
 
 ## PHPList
-Display a list of elements
+Display a list of elements.
+
 **Use it**
 
     ->list(['Element 1', 'Element 2', 'Element 3'], [options ]);
@@ -180,7 +187,8 @@ Display a text
     'text_align'=>['center', 'right', 'left']
 
 ## PHPTitle
-Display a title
+Display a title.
+
 **Use it**
 
     ->title('Title example');
