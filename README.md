@@ -14,7 +14,7 @@ This is a training project to improve my design pattern skills and PHP knowledge
 **I will be happy if you can help me in this quest**.
 PHPresentation can be used if you have a presentation to do and you don't have so much time to create it. It's easy, fast and pretty (for me it is)
 
-### What it uses ?
+### What does it use ?
 
  - `PHP` as main language
  - `HTML/CSS` for rendering in addition to `Twig` for templating
