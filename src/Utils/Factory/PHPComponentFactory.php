@@ -13,13 +13,22 @@ use PHPresentation\Utils\Factory\PHPComponentFactoryInterface;
 class PHPComponentFactory implements PHPComponentFactoryInterface
 {
 
-  public function buildComponents($text_components) {
-    $resolved_components = array();
-    foreach($text_components as $component) {
-      $resolved_components[] = $this->resolve($component[0], $component[1]);
+  private $resolved_components;
+
+  public function __construct() {
+    $this->resolved_components = [];
+  }
+
+  public function buildComponents($components) {
+    foreach($components as $component) {
+      $this->resolved_components[] = $this->resolve($component[0], $component[1]);
     }
 
-    return $resolved_components;
+    return $this->resolved_components;
+  }
+
+  public function buildComponent($component) {
+    return $this->resolve($component[0], $component[1]);
   }
 
   public function resolve($type, $options) {
