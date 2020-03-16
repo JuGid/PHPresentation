@@ -128,44 +128,44 @@ $presentation->lastSection()
              ->createSlide()
              ->title('Button example')
              ->text('This is a button with a badge and badge color')
-             ->button('http://google.Fr', 'Google',[
+             ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                'new_tab'=>true,
-               'badge'=>'badge option',
+               'badge'=>'badge',
                'bacolor'=>'warning'
              ])
              ->text('This is a button with badge, no color')
-             ->button('http://google.Fr', 'Google',[
+             ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                'new_tab'=>true,
                'badge'=>'badge option'
              ])
              ->text('This is a normal button')
-             ->button('http://google.fr', 'Google')
-             ->text('And all button options')
+             ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation')
+             ->text('And all button')
              ->beginGrid(3)
              ->beginRow()
-               ->button('http://google.Fr', 'Google',[
+               ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                  'new_tab'=>true,
                  'badge'=>'1',
                  'bacolor'=>'primary'
                ])
-               ->button('http://google.Fr', 'Google',[
+               ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                  'new_tab'=>true,
                  'badge'=>'2',
                  'bacolor'=>'danger'
                ])
-               ->button('http://google.Fr', 'Google',[
+               ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                  'new_tab'=>true,
                  'badge'=>'3',
                  'bacolor'=>'warning'
                ])
              ->endRow()
              ->beginRow()
-               ->button('http://google.Fr', 'Google',[
+               ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                  'new_tab'=>true,
                  'badge'=>'4',
                  'bacolor'=>'success'
                ])
-               ->button('http://google.Fr', 'Google',[
+               ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                  'new_tab'=>true,
                  'badge'=>'5',
                  'bacolor'=>'light'

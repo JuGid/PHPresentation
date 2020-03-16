@@ -167,28 +167,36 @@ class PHPSlide implements Renderable
   }
 
   public function beginGrid($col) {
-    $grid = new PHPGrid($col);
-    $this->current_grid = $grid;
+    if(!isset($this->current_grid)) {
+      $grid = new PHPGrid($col);
+      $this->current_grid = $grid;
+    }
     return $this;
   }
 
   public function beginRow($bordered = false) {
-    $this->current_grid->beginRow();
+    if(isset($this->current_grid) && !$this->current_grid->hasCurrentRow()) {
+      $this->current_grid->beginRow();
 
-    if($bordered) {
-      $this->current_grid->getCurrentRow()->bordered();
+      if($bordered) {
+        $this->current_grid->getCurrentRow()->bordered();
+      }
     }
     return $this;
   }
 
   public function endRow() {
-    $this->current_grid->endRow();
+    if(isset($this->current_grid) && $this->current_grid->hasCurrentRow()) {
+      $this->current_grid->endRow();
+    }
     return $this;
   }
 
   public function endGrid() {
-    $this->add($this->current_grid);
-    $this->current_grid = null;
+    if(isset($this->current_grid)) {
+      $this->add($this->current_grid);
+      $this->current_grid = null;
+    }
     return $this;
   }
 

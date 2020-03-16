@@ -43,6 +43,9 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
     return $this->options;
   }
 
+  /**
+  * Throught the validation and template, render the component
+  */
   public function render()
   {
     if($this->verify()) {
@@ -51,6 +54,10 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
     }
   }
 
+  /**
+  * Verify if the passed options are valid.
+  *
+  */
   public function verify() {
     $valid_options = $this->options();
 
@@ -67,5 +74,10 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
     return true;
   }
 
+  /**
+  * Define all valid options for validation
+  *
+  * @return array Array of options with ['option_name'=> ['valid_values']] or ['option_name'=>null] if it doesn't need values
+  */
   abstract public function options();
 }

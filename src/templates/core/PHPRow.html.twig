@@ -1,13 +1,11 @@
-{% set col = 12 / columns %}
+{% set col = 12 / columns | round(0, 'floor')%}
 
 {% if bordered %}
   {% set border = 'border' %}
-{% else %}
-  {% set border = '' %}
 {% endif %}
 
 {% for component in components %}
-  <div class="col-{{ col | round(0, 'floor') }} {{ border }}">
+  <div class="col-{{ col }} {{ border }}">
     {{ component | raw}}
   </div>
 {% endfor %}
