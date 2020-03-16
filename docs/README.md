@@ -37,6 +37,10 @@ The minimal required code in index.php is :
     $paginator = new Paginator($presentation);
     $paginator->render();
 
+It is also possible to set a logo for the presentation. This logo will be display on the first slide.
+
+    $presentation->logo(path/to/logo.png);
+
 ### To create a new section and slide
 You can use the following code to create a new section and a new slide in it
 
@@ -49,6 +53,11 @@ You can add some slide to the last section :
                  ->createSlide();
 ***While adding a component returns the slide where the component is implemented, you have to call this code below to create a new slide in a section.***
 
+You can also add components to a slide on multiple row :
+
+    $presentation->lastSection()
+			->lastSlide()
+			->text('Text on the last slide');
 Slides have also some options :
 
     $presentation->createSection("Example", "Description of this example")
@@ -68,6 +77,7 @@ You can now add components, for example :
 # Components
 ## PHPBlock
 You can create block with a title and a content.
+
 **Use it**
 
     ->block('Normal block title', 'Centered block content', [options]);
@@ -138,6 +148,12 @@ PHPGrid has a special syntax since you add components to it. You have to declare
 **Options allowed**
 
     no options
+
+**Borders**
+
+It is possible to add borders on a row :
+
+    ->beginRow(true)
 
 ## PHPImage
 Display a picture and can add link to it.
