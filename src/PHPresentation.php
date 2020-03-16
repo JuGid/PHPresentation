@@ -31,6 +31,11 @@ class PHPresentation
   private $date;
 
   /**
+  * @var string
+  */
+  private $logo;
+
+  /**
   * @var Template
   */
   private $template;
@@ -58,7 +63,16 @@ class PHPresentation
     $flyleaf->createSlide()
             ->dontShowFooter()
             ->contentCentered()
-            ->textCentered()
+            ->textCentered();
+
+    if(isset($this->logo)) {
+      $flyleaf->lastSlide()
+              ->image($this->logo, [
+                        'link'=>'https://github.com/JuGid/PHPresentation'
+                      ]);
+    }
+
+    $flyleaf->lastSlide()
             ->title($this->getName())
             ->text('by '.$this->getAuthor())
             ->text('v'.$this->getVersion());
@@ -94,6 +108,10 @@ class PHPresentation
   public function author(string $author)
   {
     $this->author = $author;
+  }
+
+  public function logo(string $adress) {
+    $this->logo = $adress;
   }
 
   public function date($day, $month, $year) {

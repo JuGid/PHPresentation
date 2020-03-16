@@ -31,6 +31,10 @@ class PHPGrid extends PHPComponent
     return null !== $this->current_row;
   }
 
+  public function getCurrentRow() {
+    return $this->current_row;
+  }
+
   public function beginRow() {
     $new_row = new PHPRow($this->number_of_col);
 

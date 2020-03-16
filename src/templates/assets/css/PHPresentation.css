@@ -87,3 +87,9 @@ html, body {
 .card-shadow {
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #005ab5;
+  border-color: #005ab5;
+}

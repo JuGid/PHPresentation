@@ -172,8 +172,12 @@ class PHPSlide implements Renderable
     return $this;
   }
 
-  public function beginRow() {
+  public function beginRow($bordered = false) {
     $this->current_grid->beginRow();
+
+    if($bordered) {
+      $this->current_grid->getCurrentRow()->bordered();
+    }
     return $this;
   }
 

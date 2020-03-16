@@ -16,11 +16,14 @@ class PHPRow extends PHPComponent
 
   private $builder;
 
+  private $bordered;
+
   public function __construct($column = 3)
   {
     $this->column = $column;
     $this->template = new Template('core/PHPRow.html.twig');
     $this->builder = new PHPComponentBuilder();
+    $this->bordered = false;
   }
 
   public function setSize($column) {
@@ -31,10 +34,15 @@ class PHPRow extends PHPComponent
     $this->builder->add($type, $options);
   }
 
+  public function bordered() {
+    $this->bordered = true;
+  }
+
   public function render() {
     // il faut render les composants avant de les mettre dans un template
     $data = [
       'columns' => $this->column,
+      'bordered'=>$this->bordered,
       'components'=>$this->builder->createViews()
     ];
 
