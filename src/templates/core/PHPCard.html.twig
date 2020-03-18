@@ -8,7 +8,15 @@
   {% endif %}
 {% endif %}
 
-<div class="card rounded-0 border-0 mb-1 {{ align }} {{ shadow }}">
+{% if options.margin_top is defined %}
+  {% set margin_top = 'mt-' ~ options.margin_top %}
+{% endif %}
+
+{% if options.margin_bottom is defined %}
+  {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
+{% endif %}
+
+<div class="card rounded-0 border-0 mb-1 {{ align }} {{ shadow }} {{ margin_top }} {{ margin_bottom }}">
   <div class="card-body border-0 bg-grey p-2">
       {{ content }}
   </div>

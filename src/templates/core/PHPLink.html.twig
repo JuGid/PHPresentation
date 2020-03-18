@@ -2,4 +2,12 @@
   {% set new_tab = 'target="_blank"' %}
 {% endif %}
 
-<a href="{{ link }}" {{ new_tab }}>{{ text }}</a>
+{% if options.margin_top is defined %}
+  {% set margin_top = 'mt-' ~ options.margin_top %}
+{% endif %}
+
+{% if options.margin_bottom is defined %}
+  {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
+{% endif %}
+
+<a href="{{ link }}" class="{{ margin_top }} {{ margin_bottom }}" {{ new_tab }}>{{ text }}</a>

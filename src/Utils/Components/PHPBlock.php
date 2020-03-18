@@ -16,7 +16,9 @@ class PHPBlock extends PHPComponent
     return [
       'text_align'=>['center', 'left', 'right'],
       'title_align'=>['center', 'left', 'right'],
-      'align'=>['center', 'left', 'right']
+      'align'=>['center', 'left', 'right'],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
 

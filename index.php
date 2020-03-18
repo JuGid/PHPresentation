@@ -39,7 +39,9 @@ $presentation->lastSection()
                'text_align'=>'center'
              ])
              ->block('Right block title', 'Normal block content', [
-               'title_align'=>'right'
+               'title_align'=>'right',
+               'margin_top'=>3,
+               'margin_bottom'=>3
              ])
              ->block('Centered title block', 'Centered block content', [
                'align'=>'center'
@@ -55,7 +57,8 @@ $presentation->lastSection()
              ->title('Card example')
              ->card('This is a card with content with shadow', [
                'text_align'=> 'center',
-               'shadow'=>true
+               'shadow'=>true,
+               'margin_bottom'=>3
              ])
              ->card('This is a card with content without shadow', [
                'text_align'=> 'center'
@@ -136,7 +139,7 @@ $presentation->lastSection()
              ->text('This is a button with badge, no color')
              ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation',[
                'new_tab'=>true,
-               'badge'=>'badge option'
+               'badge'=>'badge'
              ])
              ->text('This is a normal button')
              ->button('https://github.com/JuGid/PHPresentation', 'PHPresentation')

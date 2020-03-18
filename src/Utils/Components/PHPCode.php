@@ -13,7 +13,10 @@ class PHPCode extends PHPComponent
   }
 
   public function options() {
-    return [];
+    return [
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
+    ];
   }
 
 }

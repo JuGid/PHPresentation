@@ -18,7 +18,9 @@ class PHPButton extends PHPComponent
     return [
       'new_tab'=> [true, false],
       'badge'=>null,
-      'bacolor'=>['light', 'primary', 'danger', 'warning', 'success']
+      'bacolor'=>['light', 'primary', 'danger', 'warning', 'success'],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
 

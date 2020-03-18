@@ -2,6 +2,14 @@
   {% set align = 'text-' ~ options.align %}
 {% endif %}
 
-<div class="{{ align }}">
+{% if options.margin_top is defined %}
+  {% set margin_top = 'mt-' ~ options.margin_top %}
+{% endif %}
+
+{% if options.margin_bottom is defined %}
+  {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
+{% endif %}
+
+<div class="{{ align }} {{ margin_top }} {{ margin_bottom }}">
   <h3>{{ content }}</h3>
 </div>

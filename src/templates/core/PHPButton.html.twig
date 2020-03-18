@@ -12,5 +12,12 @@
   {% set badge = '<span class="badge ' ~  bacolor  ~'">' ~  options.badge ~ '</span>' %}
 {% endif %}
 
+{% if options.margin_top is defined %}
+  {% set margin_top = 'mt-' ~ options.margin_top %}
+{% endif %}
 
-<a class="btn btn-primary" href="{{ link }}" {{ new_tab }}>{{ text }} {{ badge|raw}}</a>
+{% if options.margin_bottom is defined %}
+  {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
+{% endif %}
+
+<a class="btn btn-primary  {{ margin_top }} {{ margin_bottom }}" href="{{ link }}" {{ new_tab }}>{{ text }} {{ badge|raw}}</a>

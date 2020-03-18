@@ -16,7 +16,9 @@ class PHPList extends PHPComponent
   public function options() {
     return [
       'content'=>null,
-      'style'=>['alpha', 'roman', 'decimal', 'square', 'circle', 'none', 'normal']
+      'style'=>['alpha', 'roman', 'decimal', 'square', 'circle', 'none', 'normal'],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
 

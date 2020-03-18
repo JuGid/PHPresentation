@@ -63,13 +63,6 @@ class PHPComponentBuilder
     }
 
     $this->ordered_components[] = [$type, $options];
-    /*
-    if($type instanceof PHPComponentInterface) {
-      $this->components[] = $type;
-    } else {
-      $this->unresolved_components[] = [$type, $options];
-    }
-    */
   }
 
   private function addComponents($components) {

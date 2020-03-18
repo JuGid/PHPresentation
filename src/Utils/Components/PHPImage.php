@@ -15,7 +15,9 @@ class PHPImage extends PHPComponent
   public function options() {
     return [
       'link'=>null,
-      'new_tab'=>[true, false]
+      'new_tab'=>[true, false],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
 }

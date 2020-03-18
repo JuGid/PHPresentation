@@ -15,8 +15,9 @@ class PHPText extends PHPComponent
   public function options() {
     return [
       'content'=>null,
-      'text_align'=>['center', 'right', 'left']
+      'text_align'=>['center', 'right', 'left'],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
-
 }

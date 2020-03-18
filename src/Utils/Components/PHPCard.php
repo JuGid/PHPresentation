@@ -15,7 +15,9 @@ class PHPCard extends PHPComponent
   public function options() {
     return [
       'text_align'=>['center', 'left', 'right'],
-      'shadow'=>[true, false]
+      'shadow'=>[true, false],
+      'margin_top'=>[1,2,3,4,5,0],
+      'margin_bottom'=>[1,2,3,4,5,0]
     ];
   }
 

@@ -1,8 +1,16 @@
+{% if options.margin_top is defined %}
+  {% set margin_top = 'mt-' ~ options.margin_top %}
+{% endif %}
+
+{% if options.margin_bottom is defined %}
+  {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
+{% endif %}
+
 {% if options.link is defined %}
   <a href="{{ options.link }}" target="_blank">
 {% endif %}
 
-<img src="{{ content}}" />
+<img src="{{ content}}" class="{{ margin_top }} {{ margin_bottom }}"/>
 
 {% if options.link is defined %}
   </a>
