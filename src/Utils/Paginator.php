@@ -3,6 +3,7 @@
 namespace PHPresentation\Utils;
 
 use PHPresentation\Utils\Renderable;
+use PHPresentation\Utils\Errors\ExceptionHandler;
 
 /**
 * Get the section and slide to render and render it.
@@ -68,6 +69,9 @@ class Paginator implements Renderable
 
   public function render()
   {
+
+    set_exception_handler([new ExceptionHandler(), 'handle']);
+
     if(isset($_GET['se']) && isset($_GET['sl'])) {
       $this->i_section = $_GET['se'];
       $this->i_slide = $_GET['sl'];

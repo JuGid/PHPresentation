@@ -4,10 +4,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 use PHPresentation\PHPresentation;
 use PHPresentation\Utils\Paginator;
 
-/* To have pretty error messages with detail */
-use PHPresentation\Utils\Errors\ExceptionHandler;
-set_exception_handler([new ExceptionHandler(), 'handle']);
-
 $presentation = new PHPresentation();
 $presentation->logo('https://github.com/JuGid/PHPresentation/raw/master/docs/logo_phpresentation.png');
 $presentation->name('PHPresentation demo');
