@@ -29,7 +29,7 @@ $presentation->createSection("Examples", "This section presents every components
              ->text('This is centered text', [
                'text_align'=>'center'
              ])
-             ->text('This is a "righted" text', [
+             ->text('This is a right text', [
                'text_align'=>'right'
              ]);
 $presentation->lastSection()

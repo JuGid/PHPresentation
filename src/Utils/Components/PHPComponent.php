@@ -60,14 +60,14 @@ abstract class PHPComponent implements Renderable, PHPComponentInterface
   */
   public function verify() {
     $valid_options = $this->options();
-
     foreach($this->options['options'] as $option=>$value) {
+
       if(!array_key_exists($option, $valid_options)) {
         throw new \Exception('The option '.$option. ' is not a valid option name for '.get_class($this));
       }
 
-      if(null !== $valid_options[$option] && !in_array($value, $valid_options[$option])) {
-        throw new \Exception('The value '.$value.' is not a valid value for option '. $option . ' for '.get_class($this));
+      if(null !== $valid_options[$option] && !in_array($value, $valid_options[$option], true)) {
+        throw new \Exception('The value ['.$value.'('. gettype($value) .')] is not a valid value for option ['. $option . '] for '.get_class($this).'. Try another value : '.implode(", ",$valid_options[$option]));
       }
 
     }

@@ -10,12 +10,8 @@ use PHPresentation\Utils\Template;
 */
 class ExceptionHandler implements Handler {
 
-  public function template() {
-    return true;
-  }
-
   public function handle($exception) {
-    $template = new Template('core/exception_handler.html.twig');
+    $template = new Template('core/Exception_handler.html.twig');
 
     $template->setData([
       'exception'=>$exception,

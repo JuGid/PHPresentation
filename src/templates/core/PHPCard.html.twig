@@ -1,5 +1,5 @@
 {% if options.text_align is defined %}
-  {% set align = 'text-' ~ options.align %}
+  {% set text_align = 'text-' ~ options.align %}
 {% endif %}
 
 {% if options.shadow is defined %}
@@ -16,7 +16,7 @@
   {% set margin_bottom = 'mb-' ~ options.margin_bottom %}
 {% endif %}
 
-<div class="card rounded-0 border-0 mb-1 {{ align }} {{ shadow }} {{ margin_top }} {{ margin_bottom }}">
+<div class="card rounded-0 border-0 mb-1 {{ text_align }} {{ shadow }} {{ margin_top }} {{ margin_bottom }}">
   <div class="card-body border-0 bg-grey p-2">
       {{ content }}
   </div>
