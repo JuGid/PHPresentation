@@ -4,6 +4,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 use PHPresentation\PHPresentation;
 use PHPresentation\Utils\Paginator;
 
+/* To have pretty error messages with detail */
+use PHPresentation\Utils\Errors\ExceptionHandler;
+set_exception_handler([new ExceptionHandler(), 'handle']);
+
 $presentation = new PHPresentation();
 $presentation->logo('https://github.com/JuGid/PHPresentation/raw/master/docs/logo_phpresentation.png');
 $presentation->name('PHPresentation demo');
@@ -19,7 +23,7 @@ $presentation->createSection("Purpose", "Description of this presentation")
                'new_tab'=>true,
              ])
              ->text('or')
-             ->link('https://github.com/JuGid/PHPresentation/issues', 'Send pull requests', [
+             ->link('https://github.com/JuGid/PHPresentation/issues', 'Help us', [
                'new_tab'=>true
              ]);
 $presentation->createSection("Examples", "This section presents every components")

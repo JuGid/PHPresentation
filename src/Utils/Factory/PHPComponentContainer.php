@@ -16,6 +16,9 @@ class PHPComponentContainer
     $resolved_type = strtolower($component_type);
     $resolved_type = $namespace . $prefix . ucfirst($resolved_type);
 
+    if(!class_exists($resolved_type)) {
+      throw new \Exception('The type '.$resolved_type . ' that you defined as '.$component_type.' is not a valid component type for PHPresentation. Use predefined function instead of add() function.');
+    }
     return new $resolved_type($options);
   }
 }
